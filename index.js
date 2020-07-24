@@ -36,11 +36,6 @@ function promptUser(){
             message: "Provide test to run for the project and provide examples"
         },
         {
-            type: "input",
-            name: "questions",
-            message: "Provide github profile and email for other users to contact you for any questions"
-        },
-        {
             type: "checkbox",
             name: "license",
             message: "What license to use for the project?",
@@ -55,6 +50,11 @@ function promptUser(){
             type:"input",
             name:"email",
             message:"Enter email that is best to contact"
+        },
+        {
+            type: "input",
+            name: "questions",
+            message: "What is the best way to contact you?"
         }
     ]);
 }
