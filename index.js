@@ -26,6 +26,12 @@ function promptUser(){
             message: "Provide usage information for the project"
         },
         {
+            type: "checkbox",
+            name: "license",
+            message: "What license to use for the project?",
+            choices: ["Apache 2.0", "GNU AGPLv3", "Unlicense", "OpenBSD", "Rust", "GNU GPLv3", "MIT", "Mozilla"]
+        },
+        {
             type: "input",
             name: "contributing",
             message: "Provide guidelines about contributing"
@@ -34,12 +40,6 @@ function promptUser(){
             type: "input",
             name: "tests",
             message: "Provide test to run for the project and provide examples"
-        },
-        {
-            type: "checkbox",
-            name: "license",
-            message: "What license to use for the project?",
-            choices: ["Apache 2.0", "GNU AGPLv3", "Unlicense", "OpenBSD", "Rust", "GNU GPLv3", "MIT", "Mozilla"]
         },
         {
             type: "input",
