@@ -1,9 +1,6 @@
 const inquirer = require("inquirer");
-const util = require("util");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown.js");
-
-const writeFileAsync = util.promisify(fs.writeFile);
 
 // array of questions for user
 function promptUser(){
@@ -64,12 +61,12 @@ function promptUser(){
 
 //Run through prompt user function and then function right after
 promptUser()
-.then(function(response){
-    console.log(response);
+.then((answers) => {
+    console.log(answers);
     
     //take replies and put them on the pre created generateMarkdown.js
-    fs.writeFile("TestREADME.md", generateMarkdown(response),function(err){
-        if(err){
+    fs.writeFile("TestREADME.md", generateMarkdown(answers),(error) => {
+        if(error){
             return console.log(error);
         }
     });
