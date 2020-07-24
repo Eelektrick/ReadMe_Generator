@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const util = require("util");
 const fs = require("fs");
+const generateMarkdown = require("./utils/generateMarkdown.js");
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
@@ -46,7 +47,7 @@ function promptUser(){
             type: "checkbox",
             name: "license",
             message: "What license to use for the project?",
-            choices: ["Apache", "GNU", "NPM", "OpenBSD", "Rust", "Wordpress", "MIT", "Mozilla"]
+            choices: ["Apache 2.0", "GNU AGPLv3", "Unlicense", "OpenBSD", "Rust", "GNU GPLv3", "MIT", "Mozilla"]
         },
         {
             type: "input",
@@ -60,18 +61,33 @@ function promptUser(){
         }
     ]);
 }
+
+//Run through prompt user function and then function right after
+promptUser()
+.then(function(response){
+    console.log(response);
+    
+    //take replies and put them on the pre created generateMarkdown.js
+    fs.writeFile("TestREADME.md", generateMarkdown(response),function(err){
+        if(err){
+            return console.log(error);
+        }
+    });
+});
+
+//Recommended started code not used
 // const questions = [
    
 // ];
 
 // function to write README file
-function writeToFile(fileName, data) {
-}
+// function writeToFile(fileName, data) {
+// }
 
-// function to initialize program
-function init() {
+// // function to initialize program
+// function init() {
 
-}
+// }
 
-// function call to initialize program
-init();
+// // function call to initialize program
+// init();
