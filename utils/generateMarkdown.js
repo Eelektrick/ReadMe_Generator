@@ -42,9 +42,9 @@ function generateMarkdown(data) {
 
   # Questions
 
-  *GitHub Username: [${data.github}](https://github.com/${data.github}) 
-  *Email: ${data.email}
-  *The best way to reach me is by ${data.questions}
+  * GitHub Username: [${data.github}](https://github.com/${data.github}) 
+  * Email: ${data.email}
+  * The best way to reach me is by ${data.questions}
 `;
 }
 
