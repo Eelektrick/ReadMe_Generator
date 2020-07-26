@@ -1,9 +1,9 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
   return `
-  # ${data.title}
+  # ${data.readme}
 
-  ![${data.licenseType}](https://img.shields.io/badge/License-${encodeURI(data.licenseType)}-blue.svg)
+  ![${data.license}](https://img.shields.io/badge/License-${encodeURI(data.license)}-blue.svg)
 
   This README file was dynamically created from the Command Line.
 
@@ -42,9 +42,9 @@ function generateMarkdown(data) {
 
   # Questions
 
-  GitHub Username: [${data.github}](https://github.com/${data.github}) 
-  Email: ${data.email}
-  ${data.questions}
+  *GitHub Username: [${data.github}](https://github.com/${data.github}) 
+  *Email: ${data.email}
+  *The best way to reach me is by ${data.questions}
 `;
 }
 
